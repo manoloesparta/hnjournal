@@ -19,7 +19,7 @@ docker-compose up -d
 go run main.go
 ```
 
-If you want as a cronjob
+If you want it as a cronjob
 
 ```bash
 git clone https://github.com/manoloesparta/hnjournal && cd hnjournal

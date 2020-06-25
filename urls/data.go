@@ -56,12 +56,11 @@ func (c *Connection) Insert(link URL) {
 	res := collection.FindOne(context.TODO(), bsonlink)
 
 	if res.Err() == nil {
-		fmt.Print("f ")
 		return
 	}
 
 	_, err := collection.InsertOne(context.TODO(), bsonlink)
-	fmt.Print("s ")
+	fmt.Print("s")
 
 	if err != nil {
 		log.Fatal(err)
