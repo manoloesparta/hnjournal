@@ -2,8 +2,6 @@ package urls
 
 import (
 	"context"
-	"fmt"
-	"log"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -26,16 +24,10 @@ func NewConnection(host string, database string, collection string) *Connection 
 
 	clientOptions := options.Client().ApplyURI(host).SetAuth(opts)
 	client, err := mongo.Connect(context.TODO(), clientOptions)
-
-	if err != nil {
-		log.Fatal(err)
-	}
+	must(err)
 
 	err = client.Ping(context.TODO(), nil)
-
-	if err != nil {
-		log.Fatal(err)
-	}
+	must(err)
 
 	return &Connection{
 		host,
@@ -60,18 +52,17 @@ func (c *Connection) Insert(link URL) {
 	}
 
 	_, err := collection.InsertOne(context.TODO(), bsonlink)
-	fmt.Print("s")
-
-	if err != nil {
-		log.Fatal(err)
-	}
+	must(err)
 }
 
 // Close terminates the connection
 func (c *Connection) Close() {
 	err := c.client.Disconnect(context.TODO())
+	must(err)
+}
 
-	if err != nil {
-		log.Fatal(err)
+func must(e error) {
+	if e != nil {
+		panic(e)
 	}
 }
