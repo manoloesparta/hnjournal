@@ -47,5 +47,7 @@ func GetLinks() []*URL {
 	})
 
 	c.Visit("https://news.ycombinator.com/")
+	c.Visit("https://news.ycombinator.com/news?p=2")
+	c.Visit("https://news.ycombinator.com/news?p=3")
 	return urls
 }
