@@ -4,6 +4,7 @@ hnjournal
 db/
 cronjob/cronjob
 api/api
+.DS_Store
 
 # Flutter/Dart/Pub related
 **/doc/api/
@@ -13,4 +14,4 @@ api/api
 .packages
 .pub-cache/
 .pub/
-/build/
+build/
