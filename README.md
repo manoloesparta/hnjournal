@@ -2,30 +2,58 @@
 
 # Hacker News Journal
 
-This a simple program that scrapes the hackernews top articles and store the titles with the url in a database. It was made to run as a cronjob that is going to insert into a mongodb database.
+This is a project whose purpose is to store hackernews top articles and be able to view them randomly. This comes from the fact that some articles are timeless and can be stored as **historical events** in a fashion like web archive.
+
+This is divided into three programs
+
+* Cronjob: This is the scrapper that gets the articles from hackernews into the mongodb database.
+* API: This is the way we extern the articles stored to consume with any type of client.
+* Client: In this case is a mobile app made with flutter that displays articles given randomly by the API.
 
 ## Requirements
 
 ```bash
 docker-compose 1.2+
 go 1.14+
+flutter 1.20+
 ```
 
-## Local build
+## Build project
+
+To have all the programs we must get up our docker-compose.yml. This was written in a fashion where it is installed on a server except for the client build.
+
+#### General setup
 
 ```bash
 git clone https://github.com/manoloesparta/hnjournal && cd hnjournal
 docker-compose up -d
-go run main.go
 ```
 
-If you want it as a cronjob
+#### Cronjob
 
 ```bash
-git clone https://github.com/manoloesparta/hnjournal && cd hnjournal
-docker-compose up -d
+cd cronjob
 go build
-crontab -e # add "0 * * * * /path/to/hnjournal"
+crontab -e 
+# add "0 * * * * /path/to/cronjob/executable"
+```
+
+#### API
+
+```bash
+screen
+cd api
+go run main.go 
+# ctrl + a followed by ctrl + d
+```
+
+#### Client (in progress)
+
+> This is only tested in iOS
+
+```bash
+cd hnclient
+flutter run
 ```
 
 ## License
