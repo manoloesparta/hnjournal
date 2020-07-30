@@ -1,3 +1,5 @@
 /target
 hnjournal
 db/
+cronjon/cronjob
+api/api
