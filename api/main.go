@@ -12,15 +12,13 @@ import (
 var m *database.Connection
 
 func main() {
-
 	m = database.NewConnection("mongodb://localhost:27017", "journal", "hackernews")
+	defer m.Close()
 
 	router := mux.NewRouter()
 	router.HandleFunc("/random", articlesHandler)
 	fmt.Println(":8080 serving")
 	http.ListenAndServe(":8080", router)
-
-	m.Close()
 }
 
 type out struct {
