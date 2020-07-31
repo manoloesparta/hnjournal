@@ -15,22 +15,16 @@ type Output struct {
 }
 
 // GetRandom gets the output of the API
-func (c *Connection) GetRandom() []Output {
+func (c *Connection) GetRandom() Output {
 	all := c.getAll()
 
 	rand.Seed(time.Now().UTC().UnixNano())
 
-	var output []Output
+	index := rand.Intn(len(all) - 1)
 
-	for i := 0; i < 3; i++ {
-		index := rand.Intn(len(all) - 1)
-
-		sel := Output{
-			Title: all[index]["title"].(string),
-			URL:   all[index]["url"].(string),
-		}
-
-		output = append(output, sel)
+	output := Output{
+		Title: all[index]["title"].(string),
+		URL:   all[index]["url"].(string),
 	}
 
 	return output
