@@ -2,7 +2,7 @@
 
 # Hacker News Journal
 
-This is a project whose purpose is to store hackernews top articles and be able to view them randomly. This comes from the fact that some articles are timeless and can be stored as **historical events** in a fashion like web archive.
+This is a project whose purpose is to store hackernews top articles and be able to view them randomly. This comes from the fact that some articles are timeless and can be stored in a fashion like a web archive.
 
 This is divided into three programs
 
@@ -12,11 +12,9 @@ This is divided into three programs
 
 ## Requirements
 
-```bash
-docker-compose 1.2+
-go 1.14+
-flutter 1.20+
-```
+* docker-compose 1.2+
+* go 1.14+
+* flutter 1.20+
 
 ## Build project
 
@@ -47,12 +45,13 @@ go run main.go
 # ctrl + a followed by ctrl + d
 ```
 
-#### Client (in progress)
+#### Client
 
-> This is only tested in iOS
+> This is only tested in the iPhone SE 2nd Generation
 
 ```bash
 cd hnclient
+flutter create .
 flutter run
 ```
 
