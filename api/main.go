@@ -35,5 +35,7 @@ func articlesHandler(w http.ResponseWriter, r *http.Request) {
 		values.URL,
 	}
 
+	fmt.Printf("%d ", 1)
+
 	json.NewEncoder(w).Encode(out)
 }

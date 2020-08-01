@@ -4,7 +4,7 @@
 
 This is a project whose purpose is to store hackernews top articles and be able to view them randomly. This comes from the fact that some articles are timeless and can be stored in a fashion like a web archive.
 
-This is divided into three programs
+This project divided into three programs
 
 * Cronjob: This is the scrapper that gets the articles from hackernews into the mongodb database.
 * API: This is the way we extern the articles stored to consume with any type of client.
@@ -18,9 +18,9 @@ This is divided into three programs
 
 ## Build project
 
-To have all the programs we must get up our docker-compose.yml. This was written in a fashion where it is installed on a server except for the client build.
+To have all the programs we must get up our docker container with the database. If you only want to consume the API with the application, just go directly to the client build.
 
-#### General setup
+#### Pre build
 
 ```bash
 git clone https://github.com/manoloesparta/hnjournal && cd hnjournal
@@ -47,7 +47,9 @@ go run main.go
 
 #### Client
 
-> This is only tested in the iPhone SE 
+> Only tested in the iPhone SE 
+
+You should have connected your phone to the computer in order to install it
 
 ```bash
 cd hnclient
