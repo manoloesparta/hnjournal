@@ -17,7 +17,6 @@ func main() {
 
 	router := mux.NewRouter()
 	router.HandleFunc("/random", articlesHandler)
-	fmt.Println(":8080 serving")
 	http.ListenAndServe(":8080", router)
 }
 
@@ -34,6 +33,8 @@ func articlesHandler(w http.ResponseWriter, r *http.Request) {
 		values.Title,
 		values.URL,
 	}
+
+	fmt.Printf("%d ", 1)
 
 	json.NewEncoder(w).Encode(out)
 }
