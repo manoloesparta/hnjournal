@@ -47,11 +47,13 @@ go run main.go
 
 #### Client
 
-> This is only tested in the iPhone SE 2nd Generation
+> This is only tested in the iPhone SE 
 
 ```bash
 cd hnclient
 flutter create .
+flutter pub get
+flutter pub run flutter_launcher_icons:main
 flutter run
 ```
 

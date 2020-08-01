@@ -8,6 +8,13 @@ api/api
 hnclient/build
 .vscode/
 
+# Client
+hnclient/.gitignore
+hnclient/README.md
+hnclient/ios
+hnclient/android
+hnclient/test
+
 # IntelliJ related
 *.iml
 *.ipr
