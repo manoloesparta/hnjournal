@@ -1,6 +1,16 @@
-![Hacker News Journal Logo](./logo.png)
+<p align="center">
+  <a>
+    <img width="200px" src="logo.png" alt="Wikigraph" />
+    <h1 align="center">Hacker News Journal</h1>
+  </a>
+</p>
 
-# Hacker News Journal
+<p align="center">
+  <a><img src="https://img.shields.io/badge/Version-1.0.0-red.svg" alt="Version"></a>
+  <a><img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" alt="License"></a>
+  <a><img src="https://img.shields.io/badge/Made%20with-Go-%2300ACD7" alt="Go"></a>
+  <a><img src="https://img.shields.io/badge/Made%20with-Dart-%2303589C" alt="Go"></a>
+</p>
 
 This is a project whose purpose is to store hackernews top articles and be able to view them randomly. This comes from the fact that some articles are timeless and can be stored in a fashion like a web archive.
 
