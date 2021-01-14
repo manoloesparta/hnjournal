@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"time"
 
 	"github.com/gorilla/mux"
 )
@@ -12,11 +13,13 @@ import (
 var m *database.Connection
 
 func main() {
-	m = database.NewConnection("mongodb://localhost:27017", "journal", "hackernews")
+	time.Sleep(10)
+	m = database.NewConnection("mongodb://0.0.0.0:27017", "journal", "hackernews")
 	defer m.Close()
 
 	router := mux.NewRouter()
 	router.HandleFunc("/random", articlesHandler)
+	fmt.Println("Listening at 8080")
 	http.ListenAndServe(":8080", router)
 }
 
@@ -33,8 +36,6 @@ func articlesHandler(w http.ResponseWriter, r *http.Request) {
 		values.Title,
 		values.URL,
 	}
-
-	fmt.Printf("%d ", 1)
 
 	json.NewEncoder(w).Encode(out)
 }

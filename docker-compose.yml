@@ -1,13 +1,45 @@
 version: '3.1'
 
 services:
-  mongo:
+
+  server:
+
+    build: ./api
+    container_name: server
+
+    depends_on:
+      - database
+      
+    ports:
+      - 8080:8080
+
+    networks:
+      - hackerjournal
+
+  database:
+
     image: mongo
-    restart: always
+    container_name: database
+
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: toor
+
     ports:
       - 27017:27017
+
     volumes:
       - ./db:/data/db
+
+    networks:
+      - hackerjournal 
+
+networks:
+
+  hackerjournal:
+
+    driver: bridge
+
+volumes:
+
+  hackervolume:
