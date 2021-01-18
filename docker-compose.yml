@@ -14,7 +14,7 @@ services:
       - 8080:8080
 
     networks:
-      - hackerjournal
+      - hn_network
 
   database:
 
@@ -32,11 +32,11 @@ services:
       - ./db:/data/db
 
     networks:
-      - hackerjournal 
+      - hn_network
 
 networks:
 
-  hackerjournal:
+  hn_network:
 
     driver: bridge
 

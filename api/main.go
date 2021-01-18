@@ -14,7 +14,7 @@ var m *database.Connection
 
 func main() {
 	time.Sleep(10)
-	m = database.NewConnection("mongodb://0.0.0.0:27017", "journal", "hackernews")
+	m = database.NewConnection("mongodb://database:27017", "journal", "hackernews")
 	defer m.Close()
 
 	router := mux.NewRouter()
