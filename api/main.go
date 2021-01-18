@@ -19,8 +19,8 @@ func main() {
 
 	router := mux.NewRouter()
 	router.HandleFunc("/random", articlesHandler)
-	fmt.Println("Listening at 8080")
-	http.ListenAndServe(":8080", router)
+	fmt.Println("Listening at 8081")
+	http.ListenAndServe(":8081", router)
 }
 
 type out struct {

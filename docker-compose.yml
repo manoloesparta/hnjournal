@@ -11,7 +11,7 @@ services:
       - database
       
     ports:
-      - 8080:8080
+      - 8081:8081
 
     networks:
       - hn_network
@@ -38,6 +38,7 @@ networks:
 
   hn_network:
 
+    name: hn_network
     driver: bridge
 
 volumes:
