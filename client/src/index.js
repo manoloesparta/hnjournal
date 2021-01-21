@@ -4,7 +4,7 @@ import './styles.css'
 
 const createArticle = (url, title) => {
   return `
-  <a href="${url}">
+  <a href="${url}" target="_blank">
     <h2>${title}</h2>
   </a>`
 }
