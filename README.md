@@ -9,7 +9,7 @@
   <a><img src="https://img.shields.io/badge/Version-1.0.0-red.svg" alt="Version"></a>
   <a><img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" alt="License"></a>
   <a><img src="https://img.shields.io/badge/Made%20with-Go-%2300ACD7" alt="Go"></a>
-  <a><img src="https://img.shields.io/badge/Made%20with-Dart-%2303589C" alt="Go"></a>
+  <a><img src="https://img.shields.io/badge/Made%20with-JavaScript-yellow" alt="JavaScript"></a>
 </p>
 
 This is a project whose purpose is to store hackernews top articles and be able to view them randomly. This comes from the fact that some articles are timeless and can be stored in a fashion like a web archive.
@@ -24,49 +24,34 @@ This project divided into three programs
 
 * docker-compose 1.2+
 * go 1.14+
-* flutter 1.20+
+* node 14.5+
 
 ## Build project
 
 To have all the programs we must get up our docker container with the database. If you only want to consume the API with the application, just go directly to the client build.
 
-#### Pre build
+### API
 
 ```bash
 git clone https://github.com/manoloesparta/hnjournal && cd hnjournal
 docker-compose up -d
 ```
 
-#### Cronjob
+### Cronjob
 
 ```bash
 cd cronjob
 go build
 crontab -e 
-# add "0 * * * * /path/to/cronjob/executable"
+echo "0 * * * * /path/to/executable" >> /etc/crontab
 ```
 
-#### API
+### Client
 
 ```bash
-screen
-cd api
-go run main.go 
-# ctrl + a followed by ctrl + d
-```
-
-#### Client
-
-> Only tested in the iPhone SE 
-
-You should have connected your phone to the computer in order to install it
-
-```bash
-cd hnclient
-flutter create .
-flutter pub get
-flutter pub run flutter_launcher_icons:main
-flutter run
+cd client
+npm install && npm run build
+open dist/index.html
 ```
 
 ## License
