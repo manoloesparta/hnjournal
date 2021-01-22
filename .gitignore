@@ -1,21 +1,20 @@
-# Go related
+# Trash
 /target
-hnjournal
-db/
-cronjob/cronjob
-api/api
 .DS_Store
+
+# Server
+db/
+api/api
+hnjournal
 hnclient/build
+cronjob/cronjob
+
+# Config
 .vscode/
-node_modules/
-client/dist/
 
 # Client
-hnclient/.gitignore
-hnclient/README.md
-hnclient/ios
-hnclient/android
-hnclient/test
+node_modules/
+client/dist/
 
 # IntelliJ related
 *.iml

@@ -1,7 +1,5 @@
 import './styles.css'
 
-// color = 0x0099ff
-
 const createArticle = (url, title) => {
   return `
   <a href="${url}" target="_blank">
