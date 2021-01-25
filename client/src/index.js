@@ -10,6 +10,8 @@ const createArticle = (url, title) => {
 const renderArticles = async () => {
   const content = document.getElementById('content')
 
+  let promiseCollection = []
+
   for(let i = 0; i < 10; i++) {
     const res = await fetch('https://hn.manoloesparta.com/random')
     const json = await res.json()
@@ -17,8 +19,11 @@ const renderArticles = async () => {
     const { title, URL: url } = json
     const article = createArticle(url, title)
 
-    content.innerHTML += article
+    promiseCollection.push(article)
   }
+
+  let result = await Promise.all(promiseCollection)
+  result.map((val) => content.innerHTML += val)
 }
 
 renderArticles()
