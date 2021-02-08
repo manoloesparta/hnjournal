@@ -35,6 +35,8 @@ services:
     networks:
       - hn_network
 
+    restart: unless-stopped
+
 networks:
 
   hn_network:
@@ -45,3 +47,4 @@ networks:
 volumes:
 
   hackervolume:
+
